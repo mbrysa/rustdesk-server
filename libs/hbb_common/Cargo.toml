@@ -32,7 +32,7 @@ regex = "1.4"
 tokio-socks = { git = "https://github.com/open-trade/tokio-socks" }
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
-mac_address = "1.1"
+mac_address = { git = "https://github.com/mbrysa/mac_address" }
 
 [features]
 quic = []

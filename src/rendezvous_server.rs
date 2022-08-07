@@ -111,12 +111,14 @@ impl RendezvousServer {
         let local_ip = if mask.is_none() {
             "".to_owned()
         } else {
-            get_arg_or(
-                "local-ip",
-                local_ip_address::local_ip()
-                    .map(|x| x.to_string())
-                    .unwrap_or_default(),
-            )
+            #[cfg(not(target_os = "openbsd"))]
+            let default = local_ip_address::local_ip()
+                .map(|x| x.to_string())
+                .unwrap_or_default();
+            #[cfg(target_os = "openbsd")]
+            let default = "".to_string();
+
+            get_arg_or("local-ip", default)
         };
         let mut rs = Self {
             tcp_punch: Arc::new(Mutex::new(HashMap::new())),

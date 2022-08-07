@@ -1100,8 +1100,7 @@ dependencies = [
 [[package]]
 name = "mac_address"
 version = "1.1.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "df1d1bc1084549d60725ccc53a2bfa07f67fe4689fda07b05a36531f2988104a"
+source = "git+https://github.com/mbrysa/mac_address#52ff04e3bb99a5d7607717b276d031db5f59551e"
 dependencies = [
  "nix",
  "winapi",

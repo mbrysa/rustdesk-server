@@ -26,7 +26,7 @@ clap = "2"
 rust-ini = "0.18"
 minreq = { version = "2.4", features = ["punycode"] }
 machine-uid = "0.2"
-mac_address = "1.1"
+mac_address = { git = "https://github.com/mbrysa/mac_address" }
 whoami = "1.2"
 base64 = "0.13"
 axum = { version = "0.5", features = ["headers"] }
@@ -48,6 +48,8 @@ tower-http = { version = "0.3", features = ["fs", "trace", "cors"] }
 http = "0.2"
 flexi_logger = { version = "0.22", features = ["async", "use_chrono_for_offset"] }
 ipnetwork = "0.20"
+
+[target.'cfg(not(target_os = "openbsd"))'.dependencies]
 local-ip-address = "0.4"
 
 [build-dependencies]
