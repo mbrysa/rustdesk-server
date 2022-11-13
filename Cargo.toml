@@ -51,6 +51,8 @@ ipnetwork = "0.20"
 
 [target.'cfg(not(target_os = "openbsd"))'.dependencies]
 local-ip-address = "0.4"
+dns-lookup = "1.0.8"
+ping = "0.4.0"
 
 [build-dependencies]
 hbb_common = { path = "libs/hbb_common" }
